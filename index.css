@@ -23,3 +23,36 @@
   --ff-sans-cond: 'Barlow Condensed', sans-serif;
   --ff-sans-normal: 'Barlow', sans-serif;
 }
+
+/* ------------- */
+/* Reset */
+/* ------------- */
+
+/* box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-weight: 400;
+}
