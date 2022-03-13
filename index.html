@@ -20,6 +20,7 @@
 </head>
 
 <body class="home">
+  <a class="skip-to-content" href="#main">Skip to content</a>
   <header class="primary-header flex">
     <div>
       <img src="./assets/shared/logo.svg" alt="logo" class="logo">
@@ -28,23 +29,31 @@
         aria-expanded="false">Menu</span></button>
     <nav>
       <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
-        <li class="active"> <a class="ff-sans-cond fs-300 text-white uppercase letter-spacing-2"
-            href="index.html"><span>00</span>
+        <li class="active">
+          <a class="ff-sans-cond fs-300 text-white uppercase letter-spacing-2" href="index.html">
+            <span aria-hidden="true">00</span>
             Home</a>
         </li>
-        <li> <a class="ff-sans-cond fs-300 text-white uppercase letter-spacing-2"
-            href="destination.html"><span>01</span>
+        <li>
+          <a class="ff-sans-cond fs-300 text-white uppercase letter-spacing-2" href="destination.html">
+            <span aria-hidden="true">01</span>
             Destination</a>
         </li>
-        <li> <a class="ff-sans-cond fs-300 text-white uppercase letter-spacing-2" href="crew.html"><span>02</span>
-            Crew</a></li>
-        <li> <a class="ff-sans-cond fs-300 text-white uppercase letter-spacing-2" href="technology.html"><span>03</span>
+        <li>
+          <a class="ff-sans-cond fs-300 text-white uppercase letter-spacing-2" href="crew.html">
+            <span aria-hidden="true">02</span>
+            Crew</a>
+        </li>
+        <li>
+          <a class="ff-sans-cond fs-300 text-white uppercase letter-spacing-2" href="technology.html">
+            <span aria-hidden="true">03</span>
             Technology</a>
         </li>
       </ul>
     </nav>
+
   </header>
-  <div class="grid-container grid-container--home">
+  <main id="main" class="grid-container grid-container--home">
     <div>
       <h1 class="ff-sans-cond fs-500 uppercase letter-spacing-1 text-accent">
         So, you want to travel to <span class="d-block ff-serif fs-900 text-white">space</span></h1>
@@ -59,7 +68,7 @@
     <div>
       <a href="#" class="large-button uppercase ff-serif text-dark bg-white">Explore</a>
     </div>
-  </div>
+  </main>
 </body>
 
 </html>

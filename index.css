@@ -196,6 +196,20 @@ textarea {
   border: 0;
 }
 
+.skip-to-content {
+  position: absolute;
+  z-index: 9999;
+  background: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark));
+  padding: .5em 1em;
+  margin-inline: auto;
+  transform: translateY(-100%);
+  transition: transform .3s;
+}
+.skip-to-content:focus {
+  transform: translateY(0%);
+}
+
 /* colors */
 
 .bg-dark { background-color: hsl(var(--clr-dark)); }
