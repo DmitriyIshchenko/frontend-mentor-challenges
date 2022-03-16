@@ -100,6 +100,9 @@ body {
 img,
 picture {
   max-width: 100%;
+}
+
+img {
   display: block;
 }
 
@@ -545,6 +548,7 @@ body {
 .grid-container--destination > picture {
   grid-area: image;
   max-width: 60%;
+  align-self: start;
 }
 
 .grid-container--destination > .tab-list {
@@ -648,10 +652,8 @@ body {
     '. image content .'
   }
 
-  .grid-container--destination > picture,
-  .grid-container--crew > picture {
+  .grid-container--destination > picture {
     max-width: 80%;
-    min-height: 0;
   }
 
   .destination-meta {
@@ -660,6 +662,8 @@ body {
   }
 
   .grid-container--crew {
+    justify-items: start;
+    grid-template-columns: minmax(2rem, 1fr) minmax(0, 35rem) minmax(0, 25rem) minmax(2rem, 1fr);
     --flow-space: 2rem;
     grid-template-areas: 
     '. title title .'
@@ -667,13 +671,9 @@ body {
     '. dots image .';
   }
 
-  .grid-container--crew .dot-indicators {
-    --gap: min(2rem, 10vw);
-    justify-self: start;
+  .grid-container--crew > picture {
+    grid-column: span 2;
+    align-self: end;
+    max-width: 80%;
   }
-
-  .grid-container--crew .crew-info {
-    justify-self: start;
-  }
-
 }
