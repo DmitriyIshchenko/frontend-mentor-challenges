@@ -514,6 +514,24 @@ body {
   }
 }
 
+/* technology bg */
+
+.technology {
+  background-image: url(./assets/technology/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+  .technology {
+    background-position: center center;
+    background-image: url(./assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+@media (min-width: 45em) {
+  .technology {
+    background-image: url(./assets/technology/background-technology-desktop.jpg);
+  }
+}
 /* -------------------------- */
 /* layout */
 /* ---------------------------*/
@@ -526,7 +544,7 @@ body {
   padding-bottom: 4rem;
 }
 
-.grid-container p:not([class]) {
+.grid-container p {
   max-width: 50ch;
 }
 
@@ -602,6 +620,40 @@ body {
   color: hsl(var(--clr-white) / .5);
 }
 
+/* technology layout */
+
+.grid-container--technology {
+  --flow-space: 2rem;
+  grid-template-areas:
+  'title'
+  'image'
+  'tabs'
+  'content';
+}
+
+.grid-container--technology > picture {
+  max-width: none;
+  margin-inline: -1rem;
+  grid-area: image;
+  object-fit: cover;
+}
+
+.grid-container--technology .img-portrait {
+  display: none;
+}
+
+.grid-container--technology > .number-indicators {
+  grid-area: tabs;
+}
+
+.grid-container--technology > .number-indicators > * {
+  width: 3rem;
+}
+
+.grid-container--technology > .technology-info {
+  grid-area: content;
+}
+
 @media (min-width: 35em) {
   .numbered-title {
     justify-self: start;
@@ -646,6 +698,7 @@ body {
   .grid-container--destination {
     justify-items: start;
     align-content: start;
+    grid-template-columns: minmax(2rem, 1fr) minmax(0, 35rem) minmax(0, 25rem) minmax(2rem, 1fr);
     grid-template-areas: 
     '. title title .'
     '. image tabs .'
@@ -675,5 +728,37 @@ body {
     grid-column: span 2;
     align-self: end;
     max-width: 80%;
+  }
+
+  .grid-container--technology {
+    gap: 3rem;
+    grid-template-columns: minmax(2rem, 1fr) minmax(0, 5rem)  minmax(0, 35rem) minmax(0, 25rem) minmax(2rem, 1fr);
+    grid-template-areas: 
+    '. title title title .'
+    '. tabs content image .'
+    '. tabs content image .';
+  }
+
+  .grid-container--technology  .number-indicators {
+    --gap: 2rem;
+    flex-direction: column;
+  }
+
+  .grid-container--technology > .number-indicators > * {
+    width: 4rem;
+  }
+
+  .grid-container--technology > picture {
+    grid-column: span 2;
+    justify-self: end;
+  }
+
+
+  .grid-container--technology  .img-landscape {
+    display: none;
+  }
+
+  .grid-container--technology .img-portrait {
+    display: block;
   }
 }
