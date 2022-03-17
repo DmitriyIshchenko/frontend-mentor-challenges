@@ -22,9 +22,9 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - View each page and be able to toggle between the tabs to see new information
 
-### Screenshot
+### Screenshots
 
-![Mobile](https://i.imgur.com/sYvOIww.png)
+![Mobile](https://i.imgur.com/3pKZy5A.png)
 ![Tablet](https://i.imgur.com/av0FWoq.png)
 ![Desktop](https://i.imgur.com/sYvOIww.png)
 
