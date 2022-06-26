@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-//import logo from "./images/account.svg";
 
 export default function JobCard({ job, handleAddSkill }) {
 
@@ -18,45 +17,53 @@ export default function JobCard({ job, handleAddSkill }) {
   } = job;
 
   const renderedSkills = skills.map(skill =>
-    <button
-      className='skill'
-      key={id + skill}
-      onClick={() => handleAddSkill(skill)}
-    >
-      {skill}
-    </button>)
+    <li key={id + skill}>
+      <button
+        className='skill text-cyan'
+        onClick={() => handleAddSkill(skill)}>
+        {skill}
+      </button>
+    </li>
+  )
 
   return (
-    <li className='card flex'>
-      <picture>
+    <li className='card'>
+
+      <div className={classNames(
+        'card__featured', {
+        'd-none': !isFeatured,
+      })}></div>
+
+      <picture className='logo'>
         <img src={require(`${logo}`)} alt="" />
       </picture>
 
-      <div className='card__info flow'>
-        <header className='flex'>
-          <p>{company}</p>
+      <header className='flex'>
+        <p className='text-cyan'>{company}</p>
+        <span className={classNames(
+          'new flex', {
+          'd-none': !isNew,
+        })}>new!</span>
 
-          <span className={classNames({
-            'd-none': !isNew,
-          })}>new!</span>
+        <span className={classNames(
+          'featured flex', {
+          'd-none': !isFeatured,
+        })}>featured</span>
 
-          <span className={classNames({
-            'd-none': !isFeatured,
-          })}>featured</span>
-        </header>
+      </header>
 
-        <div className='card__info-main flex'>
-          <h2>{position}</h2>
-          <div className='flex'>
-            {renderedSkills}
-          </div>
-        </div>
+      <div className='job flow'>
+        <h1 className='job__position text-dark'>{position}</h1>
 
-        <div className='card__info-meta flex'>
-          <p>{postedAt}</p>
-          <p>{contract}</p>
-          <p>{location}</p>
-        </div>
+        <ul className='job__conditions text-muted'>
+          <li>{postedAt}</li>
+          <li>{contract}</li>
+          <li>{location}</li>
+        </ul>
+
+        <ul className='job__skills flex'>
+          {renderedSkills}
+        </ul>
       </div>
     </li>
   )

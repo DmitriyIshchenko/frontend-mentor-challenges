@@ -7,7 +7,7 @@ export default function JobsList({ jobs, activeSkills, handleAddSkill }) {
   const renderedContent = content.map(job => <JobCard key={job.id} job={job} handleAddSkill={handleAddSkill} />)
 
   return (
-    <ul>
+    <ul className='grid-container flow'>
       {renderedContent}
     </ul>
   )
