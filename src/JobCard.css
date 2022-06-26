@@ -27,19 +27,26 @@
   -ms-transform-origin-x: 0;
 }
 
+.card__header {
+  grid-area: header;
+}
+
 .job {
   --flow-space: 1rem;
+  grid-area: job;
 }
 
 .job__position {
   padding-top: .5rem;
   font-size: 1.2rem;
+  grid-area: job__position;
 }
 
 .job__conditions {
   padding-bottom: 1rem;
   border-bottom: 1px solid hsl(var(--clr-muted));
   font-weight: 500;
+  grid-area: job__conditions;
 }
 
 .job__conditions li {
@@ -84,4 +91,48 @@
 
 .featured {
   background-color: hsl(var(--clr-dark));
+}
+
+@media screen and (min-width: 60em) {
+  .card {
+    display: grid;
+    max-width: 70em;
+    padding-block: 1.5rem;
+    padding-inline: 2rem;
+    grid-template-columns: 100px 1fr 1fr;
+    gap: 1rem;
+    grid-template-areas:
+      "logo header header"
+      "logo job job "
+      "logo job job ";
+  }
+
+  .card__featured {
+    width: .35rem;
+  }
+
+  .logo {
+    display: grid;
+    place-items: center;
+    position: static;
+    transform: none;
+    grid-area: logo;
+  }
+
+  .job {
+    display: grid;
+    justify-content: space-between;
+    grid-template-areas:
+      "job__position job__skills"
+      "job__conditions .";
+  }
+
+  .job>* {
+    padding: 0;
+    --flow-space: 0;
+  }
+
+  .job__conditions {
+    border: none;
+  }
 }

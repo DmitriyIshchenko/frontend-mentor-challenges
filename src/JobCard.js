@@ -38,7 +38,7 @@ export default function JobCard({ job, handleAddSkill }) {
         <img src={require(`${logo}`)} alt="" />
       </picture>
 
-      <header className='flex'>
+      <header className='card__header flex'>
         <p className='text-cyan'>{company}</p>
         <span className={classNames(
           'new flex', {

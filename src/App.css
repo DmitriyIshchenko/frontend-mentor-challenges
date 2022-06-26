@@ -98,3 +98,19 @@ li {
 .App {
   margin-top: 156px;
 }
+
+@media screen and (min-width: 60em) {
+
+  body {
+    background-image: url("./images/bg-header-desktop.svg"), linear-gradient(to bottom,
+        hsl(var(--clr-primary)) 0%,
+        hsl(var(--clr-primary)) 156px,
+        hsl(var(--clr-backgroung)) 156px,
+        hsl(var(--clr-backgroung)) 100%);
+  }
+
+  .grid-container {
+    --flow-space: 1.5rem;
+    padding-block: 2rem;
+  }
+}

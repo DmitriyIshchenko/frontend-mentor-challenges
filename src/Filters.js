@@ -17,14 +17,15 @@ export default function Filters({ activeSkills, handleRemoveSkill, handleClearSk
 
   return (
     <div className={classNames(
-      'filters-container',
-      'flex', {
+      'filters-container', {
       'd-none': activeSkills.length === 0,
     })}>
-      <ul className='flex'>
-        {renderedSkills}
-      </ul>
-      <button className='btn-clear text-muted' onClick={() => handleClearSkills()}>clear</button>
-    </div >
+      <div className='filters flex'>
+        <ul className='filters__list flex'>
+          {renderedSkills}
+        </ul>
+        <button className='filters__btn-clear text-muted' onClick={() => handleClearSkills()}>clear</button>
+      </div>
+    </div>
   )
 }

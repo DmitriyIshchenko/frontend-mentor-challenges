@@ -36,7 +36,7 @@ export default function Home() {
   const activeSkills = Object.keys(skills).filter(item => skills[item]);
 
   return (
-    <div>
+    <>
       <Filters
         activeSkills={activeSkills}
         handleRemoveSkill={handleRemoveSkill}
@@ -45,6 +45,6 @@ export default function Home() {
         jobs={jobs}
         activeSkills={activeSkills}
         handleAddSkill={handleAddSkill} />
-    </div>
+    </>
   )
 }
