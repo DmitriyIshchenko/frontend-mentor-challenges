@@ -76,7 +76,6 @@
 
 .new,
 .featured {
-  align-items: center;
   padding-inline: .5rem;
   border-radius: 1rem;
   color: white;

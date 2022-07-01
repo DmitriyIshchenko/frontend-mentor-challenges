@@ -41,12 +41,12 @@ export default function JobCard({ job, handleAddSkill }) {
       <header className='card__header flex'>
         <p className='text-cyan'>{company}</p>
         <span className={classNames(
-          'new flex', {
+          'new', {
           'd-none': !isNew,
         })}>new!</span>
 
         <span className={classNames(
-          'featured flex', {
+          'featured', {
           'd-none': !isFeatured,
         })}>featured</span>
 
